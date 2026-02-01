@@ -1,7 +1,6 @@
 # Object-based-project
 JavaScript Object Manipulation Project A simple web-based project demonstrating creation, addition, update, deletion, and nested handling of JavaScript objects using HTML, CSS, and JavaScript.
 
-avaScript Object Manipulation Project
 
 This project demonstrates how JavaScript objects can be created and manipulated dynamically through a user-friendly web interface.
 
