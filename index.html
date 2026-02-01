@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css">
+    
+</head>
+<body>
+    <h1>Project based on Object </h1>
+    <h2>Create object </h2>
+    Name:<input type="text" id="name">
+    Age:<input type="text" id="age">
+    City:<input type="text" id="city">
+    <button onclick="createobject()">Create object </button>
+    <hr>
+    <h2>Add Property</h2>
+    Key:<input type="text" id="addkey">
+    value:<input type="text" id="addvalue">
+    
+    <button onclick="addproperty()">Add Property </button><hr>
+    <h2>Delete property </h2>
+    Key:<input id="delkey">
+    <button onclick="deleteproperty()">Delete key </button>
+    <hr>
+    <h2>Replace / update property </h2>
+    Key:<input id="replacekey">
+    New value:<input id="replacevalue">
+    <button onclick="repalaceproperty()">Repalce  </button>
+    <hr>
+    <h2>Nested object </h2>
+    Subject:<input id="subname">
+    Marks:<input id="submarks">
+    <button onclick="addNested()">Add/Update Subject  </button>
+    <button onclick="showobject()">Show object   </button>
+    <pre id="res">
+
+    </pre>
+    <script>
+        let studentdata={}
+        function createobject(){
+            studentdata={
+                name:document.getElementById("name").value,
+                age:document.getElementById("age").value,
+                city:document.getElementById("city").value,
+                // marks:{}
+            }
+            showobject()
+        }
+        function showobject(){
+            v=JSON.stringify(studentdata)
+                document.getElementById("res").innerText=v
+        }
+        function addproperty(){
+            let key=document.getElementById("addkey").value
+            let value=document.getElementById("addvalue").value
+            studentdata[key]=value
+            // studentdata.key=value
+            showobject()
+        }
+        function deleteproperty(){
+            let deletedata=document.getElementById("delkey").value
+            delete studentdata[deletedata]
+            showobject()
+        }
+
+        function repalaceproperty(){
+            let replacekey=document.getElementById("replacekey").value
+            let replacevalue=document.getElementById("replacevalue").value
+            // delete studentdata[replacekey]
+            studentdata[replacekey]=replacevalue
+             showobject()
+
+
+        }
+        function addNested(){
+            let subject=document.getElementById("subname").value
+            let marks=document.getElementById("submarks").value
+            studentdata.marks[subject]=marks
+            showobject()
+
+               
+        
+        }
+    
+        
+    </script>
+    
+</body>
+</html>
